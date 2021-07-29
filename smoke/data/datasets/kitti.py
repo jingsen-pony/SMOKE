@@ -26,6 +26,7 @@ TYPE_ID_CONVERSION = {
 class KITTIDataset(Dataset):
     def __init__(self, cfg, root, is_train=True, transforms=None):
         super(KITTIDataset, self).__init__()
+        root = os.path.abspath(root)
         self.root = root
         self.image_dir = os.path.join(root, "image_2")
         self.label_dir = os.path.join(root, "label_2")
